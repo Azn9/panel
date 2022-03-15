@@ -41,6 +41,7 @@ class ServerTransformer extends BaseClientTransformer
             'server_owner' => $this->getKey()->user_id === $server->owner_id,
             'identifier' => $server->uuidShort,
             'internal_id' => $server->id,
+            'external_id' => $server->external_id ?? $server->uuid,
             'uuid' => $server->uuid,
             'name' => $server->name,
             'node' => $server->node->name,
