@@ -47,6 +47,7 @@ class ServerConfigurationStructureService
     {
         return [
             'uuid' => $server->uuid,
+            'external_id' => $server->external_id ?? $server->uuid,
             'suspended' => $server->isSuspended(),
             'environment' => $this->environment->handle($server),
             'invocation' => $server->startup,
@@ -99,6 +100,7 @@ class ServerConfigurationStructureService
     {
         return [
             'uuid' => $server->uuid,
+            'external_id' => $server->external_id ?? $server->uuid,
             'build' => [
                 'default' => [
                     'ip' => $server->allocation->ip,
